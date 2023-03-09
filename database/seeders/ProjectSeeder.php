@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
             $newproject->data_progetto = $faker->date('Y_m_d');
             $newproject->difficoltà = $faker->randomDigit();
             $newproject->descrizione = $faker->paragraph();
-            $newproject->cover_image =$faker->imageUrl(360, 360, 'animals', true, 'dogs', true, 'jpg');
+            // $newproject->cover_image =$faker->imageUrl(360, 360, 'animals', true, 'dogs', true, 'jpg');
             $newproject->slug = Str::slug($newproject->title, '-');
 
 
