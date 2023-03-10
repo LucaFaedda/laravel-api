@@ -9,7 +9,7 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
    public function index(){
-    $projects = Project::paginate(4);
+    $projects = Project::with('technology', 'type')->paginate(4);
     return response()->json([  // vanno messe le parentesi quadre dopo la tonda
         'success' => true,
         'results' => $projects

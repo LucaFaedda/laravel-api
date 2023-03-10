@@ -29,6 +29,7 @@ class UpdateProjectRequest extends FormRequest
             'data_progetto' => ['nullable'],
             'difficoltà' => ['required'],
             'descrizione' => ['nullable'],
+            'types_id' => ['nullable', 'exists:types,id'],
             'technology_id' => ['exists:technologies,id'],
             'cover_image' => ['nullable', 'image']
         ];

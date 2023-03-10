@@ -15,7 +15,7 @@ class Type extends Model
         return Str::slug($name, '-');
     }
 
-    public function projects(){
+    public function project(){
         return $this->hasMany(Project::class);
     }
 }
