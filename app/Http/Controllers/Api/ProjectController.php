@@ -15,4 +15,21 @@ class ProjectController extends Controller
         'results' => $projects
     ]);
    }
+
+   public function show($slug){
+        $project = Project::with('technology', 'type')->where('slug' , $slug)->first(); // qua vado a richiamare il singolo progetto tramite lo slug
+        if($project){
+            response()->json([
+                'success' => true,
+                'results' => $project
+            ]);
+        }
+        else{
+            response()->json([
+                'success' => false,
+                'error' => 'Nessun progetto trovato'
+            ]);
+        }
+
+   }
 }
