@@ -18,9 +18,11 @@ class GuestContact extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public  $lead;
+    public function __construct($_lead)
     {
-        //
+        $this->lead = $_lead;
     }
 
     /**
@@ -31,7 +33,9 @@ class GuestContact extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Guest Contact',
+
+            replyTo: $this->lead->email,
+            subject: 'Nuovo contatto ricevuto dal form di "Contattaci"',
         );
     }
 
@@ -43,7 +47,7 @@ class GuestContact extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'admin.mails.contact_form',
         );
     }
 
