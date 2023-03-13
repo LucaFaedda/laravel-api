@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('surname', 50);
-            $table->string('email', 50);
+            $table->string('nome', 50);
+            $table->string('cognome', 50);
+            $table->string('mail', 50);
             $table->string('phone', 50);
             $table->text('message');
             $table->timestamps();

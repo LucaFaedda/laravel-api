@@ -16,8 +16,8 @@ class GuestController extends Controller
         $form_data = $request->all(); // Qua andiamo a recuperare i dati del form fatti in front-end
         
         $validator = Validator::make($form_data, [     // quan andiamo a validarli
-            'name'  => 'required',
-            'surname' => 'required',
+            'nome'  => 'required',
+            'cognome' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'message' => 'required',
